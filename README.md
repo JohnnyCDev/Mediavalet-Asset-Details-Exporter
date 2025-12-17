@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Mediavalet Asset Details Exporter Automation
+MediaValet Asset Exporter is a tool to export all your MediaValet assets along with complete details into an Excel file. It supports exporting either all assets or assets from a specific category, including subcategories.
 
 ## Getting Started
 
@@ -16,25 +17,31 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Features
+- Credentials loaded securely from a `.env` file  
+- Export **all assets** or assets from a **specific category**  
+- Include **subcategories** if needed  
+- Exported data saved directly to Excel  
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Steps to Use
+1. Select whether you want to export **ALL assets** or only a **specific category**  
+2. If in category mode, paste the **Category ID** from the URL  
+3. Check if you want to include **subcategories**  
+4. Click the **Export** button  
+5. Wait for the download  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Export Modes
+**Export All Assets**  
+- Download all assets in MediaValet  
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Export Specific Category**  
+- Download assets from a specific category  
 
-## Learn More
+## Export to Excel
+The tool uses the MediaValet Search API with proper pagination. The Excel file contains:  
+- Asset ID, Name, Title, Description  
+- **All Category Paths** (comma-separated)  
+- Keywords, Dates, Dimensions  
+- Download URLs  
+- **All Custom Attributes**
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
